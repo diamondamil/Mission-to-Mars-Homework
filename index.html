@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Mission to Mars</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Bring in my own stylesheet -->
+
+    <link rel="stylesheet" href="M2MS_Style.css" media="screen">
+
+</head>
+
+
+
+<body>
+
+  <div class="container">
+
+
+
+    <div class="jumbotron text-center">
+
+      <h1>Mission to Mars</h1>
+
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+
+    </div>
+
+
+
+    <!-- Mars News -->
+
+    <div class="row" id="mars-news">
+
+      <div class="col-md-12">
+
+        <div class="media">
+
+          <div class="media-body">
+
+            <h2>Latest Mars News</h2>
+
+            <h4 class="media-heading">New Study Tracks Hurricane Harvey Stormwater with GPS</h4>
+
+            <p>Hurricane Harvey dumped more than 5 feet (1.5 meters) of water on southeast Texas in late August 2017, making it the wettest recorded hurricane in U.S. history. But after the storm passed, where did all that water go? 
+                In a new, NASA-led study, scientists used Global Positioning System (GPS) data to answer that question and to track not just where Harvey's stormwater ended up on land, but also how long it took to dissipate. 
+                "We determined that in the first eight days post-landfall, 30 percent of Harvey's stormwater was captured or stored on land -- most as standing water that sits on the surface. Around 60 percent was lost or drained into the ocean and Galveston Bay over the first few days after the storm, and the remaining 10 percent was lost via evapotranspiration, or a combination of evaporation and plant transpiration," said first author Chris Milliner of NASA's Jet Propulsion Laboratory in Pasadena, California. 
+                The 30 percent of water that was stored on land then gradually dissipated over a period of about five weeks, likely through evapotranspiration, groundwater runoff into nearby rivers and the replenishment of aquifers. 
+                How It Works
+                
+                Made up of satellites, receivers and ground stations located around the world, GPS allows scientists to measure changes in Earth's surface elevation to an accuracy of less than an inch (a few millimeters). It works much like GPS on your mobile phone but with greater accuracy. The study team used daily elevation measurements from about 220 of these ground stations, from western Texas to Louisiana, to track changes in the amount of stormwater on land after the hurricane.
+                "When you sit on a mattress, your weight depresses its surface. Earth's crust is also elastic and behaves in a similar way under the weight of water," said Milliner. "GPS is measuring the amount of subsidence (or depression), which tells you how much water mass must be pressing on the surface and where that water is distributed."
+                The team determined that in the first several days after Hurricane Harvey, the land around Houston lowered in elevation by as much as 20 millimeters. The GPS data also tracked a clear pattern of land subsidence that migrated across the Gulf Coast over a seven-day period, consistent with the position of Hurricane Harvey. Following this initial land subsidence, measurements from GPS stations found that Earth's surface gradually rose back up, indicating water was draining and evaporating from land -- just as a mattress behaves when you slowly stand up and remove your weight from it. 
+                To detect Earth's mattress-like response to changes in water mass, the team first had to process the GPS data to remove systematic errors called common mode error (CME). CME acts essentially as "noise" that masks the hydrologic signal. Using an independent component-analysis filter, the team was able to statistically separate the raw GPS data into CME and hydrologic signals. This allowed them to discard the signal that was noise and extract the subtle hydrologic signal they sought.
+                With the filtered GPS data, scientists were able to determine the daily magnitude and location of the surface depression and from this calculate the daily mass of water that caused it.
+                Why It Matters
+                
+                The study demonstrates -- for the first time -- that it is possible to robustly quantify daily changes in water storage following extreme precipitation events like major hurricanes. It allows us to see how much water is temporarily stored on land after a major hurricane, where it is stored, and how long it takes for stored water to dissipate over time. 
+                Scientists wanting to understand how the hydrologic system behaves in response to large storms benefit from this information, but so do water and flood managers. If they know how much water was stored on land and how long it took for the water to dissipate after a major precipitation event, they have a clearer understanding of what to expect when the next major, rain-intensive storm hits -- and can prepare accordingly. 
+                The study, titled "Tracking the Weight of Hurricane Harvey's Stormwater Using GPS Data," was recently published by the journal Science Advances.
+                
+                News Media Contact
+                Esprit Smith
+                Jet Propulsion Laboratory, Pasadena, Calif.
+                818-354-4269
+                esprit.smith@jpl.nasa.gov</p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- Mars Featured Image -->
+
+    <div class="row" id="mars-featured-image">
+
+      <div class="col-md-8">
+
+        <h2>Featured Mars Image</h2>
+
+
+
+          <!-- if images is False/None/non-existent, then default to error message -->
+
+          <img src="C:\Users\diamo\OneDrive\Documents\UCB Data Analytics\UCBEL201806DATA2-Class-Repository-DATA\13-Web-Scraping-and-Document-Databases\Homework\Instructions\Images\final_app_part1.png" class="img-responsive"
+
+          alt="Responsive image">
+
+      </div>
+
+
+
+      <div class="col-md-4">
+
+
+
+        <!-- Mars Weather -->
+
+        <div class="row" id="mars-weather">
+
+          <div class="col-md-12">
+
+
+
+              <div class="panel panel-default">
+
+                  <div class="panel-body">
+
+                      <h4>Current Weather on Mars</h4>
+
+                      <p>{{mars.weather}}</p>
+
+                  </div>
+
+              </div>
+
+
+
+
+
+          </div>
+
+        </div>
+
+
+
+        <!-- Mars Facts -->
+
+        <div class="row" id="mars-facts">
+
+          <div class="col-md-12">
+
+            <h4>Mars Facts</h4>
+
+            {{mars.facts | safe}}
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+    <!-- Mars Hemispheres -->
+
+    <div class="row" id="mars-hemispheres" style="margin-top:80px;">
+
+
+            <!-- if images is False/None/non-existent, then default to error message -->
+
+            <img src="C:\Users\diamo\OneDrive\Documents\UCB Data Analytics\UCBEL201806DATA2-Class-Repository-DATA\13-Web-Scraping-and-Document-Databases\Homework\Instructions\Images\final_app_part2.png"
+
+                alt="...">
+
+        </div>
+
+      {% endfor %}
+
+
+
+    </div>
+
+
+
+  </div>
+
+</body>
+
+
+
+</html>
